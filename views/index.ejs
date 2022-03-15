@@ -1,0 +1,14 @@
+
+    <h1>home</h1>
+    <p>Welcome home</p>
+    <a href="/main/addEvent">add event</a>
+    <a href="/auth/signup">sign up</a>
+    <a href="/auth/signin">login</a>
+    <a href="/profile/showProfile">profile</a>
+
+    <ul>
+      <% allEvent.forEach(function(eachEvent){ %>
+          <li>name: <%= eachEvent.name %>, description: <%= eachEvent.description %></li>
+      <% }) %>
+    </ul>
+ 

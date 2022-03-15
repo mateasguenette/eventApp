@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>profile-page</title>
+    
+  </head>
+  <body>
+    <h1>Profile page</h1>
+    <a href="/">home</a>
+    <a href="/">edit</a>
+    <a href="/">delete</a>
+    
+    
+  
+
+    <% if (currentUser) { %>
+        <div>name: <%= currentUser.firstName %></div>
+        <div>email:<%= currentUser.lastName%> </div>
+    <% } %>
+
+    </body>
+</html>
