@@ -3,7 +3,8 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 let passport = require('../helper/ppConfig');
 const salt = 10;
-const {validationResult} = require('express-validator')
+const {validationResult} = require('express-validator');
+const res = require('express/lib/response');
 
 function signup(req, res){
     console.log('in sign up function')
@@ -46,4 +47,9 @@ function signin(req, res){
 
     })
 
-module.exports = {signup, signup_post, signin, signin_post}
+    function logout(req, res){
+        req.logout();
+        res.redirect('/auth/signin')
+    }
+
+module.exports = {signup, signup_post, signin, signin_post, logout}

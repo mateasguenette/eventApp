@@ -12,11 +12,11 @@ const eventSchema = new Schema({
     date: Date,
     creator: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'profile'
+        ref: 'User'
     },
     attendies: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'profile'
+        ref: 'User'
     }]
 
 })

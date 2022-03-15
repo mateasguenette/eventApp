@@ -10,4 +10,6 @@ router.post('/signup', authtCntrl.signup_post)
 router.get('/signin', authtCntrl.signin)
 
 router.post('/signin', authtCntrl.signin_post)
+
+router.get('/logout', authtCntrl.logout)
 module.exports = router;

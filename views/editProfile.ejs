@@ -1,0 +1,19 @@
+<h1>edit profile</h1>
+
+<form method="POST" action="/profile/editProfile">
+
+    <label>firstname:</label>
+    <input type="text" name="firstName" value="<%=currentUser.firstName%>" required/>
+
+    <label>lastname:</label>
+    <input type="text" name="lastName" value="<%=currentUser.lastName%>" required/>
+
+    <label>email:</label>
+    <input type="text" name="emailAddress" value="<%=currentUser.emailAddress%>" required/>
+
+
+
+    <br>
+
+    <button type="submit">save changes</button>
+</form>

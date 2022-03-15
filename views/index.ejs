@@ -8,7 +8,8 @@
 
     <ul>
       <% allEvent.forEach(function(eachEvent){ %>
-          <li>name: <%= eachEvent.name %>, description: <%= eachEvent.description %></li>
+          <li>name: <%= eachEvent.name %>, description: <%= eachEvent.description %><a href="/main/attending/<%=eachEvent.id%>">attending</a></li>
       <% }) %>
     </ul>
- 
+
+

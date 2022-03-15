@@ -7,16 +7,20 @@
   <body>
     <h1>Profile page</h1>
     <a href="/">home</a>
-    <a href="/">edit</a>
-    <a href="/">delete</a>
-    
+    <a href="/profile/edit">edit</a>
+    <form action="/profile/delete?_method=DELETE" method="POST"><button>delete</button></form>
+    <a href="/main/addEvent">add event</a>  
+    <a href="/auth/logout">logout</a>
     
   
 
     <% if (currentUser) { %>
-        <div>name: <%= currentUser.firstName %></div>
-        <div>email:<%= currentUser.lastName%> </div>
+        <div>firstname: <%= currentUser.firstName %></div>
+        <div>lastname: <%= currentUser.lastName%> </div>
+        <div>email: <%= currentUser.emailAddress%> </div>
     <% } %>
+
+    
 
     </body>
 </html>

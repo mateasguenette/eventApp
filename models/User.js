@@ -20,7 +20,11 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         minlength: [6, "Your password should be atleast 6 characters"]
-    }
+    },
+    events: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'event'
+    }]
     
 }
 ,
@@ -39,3 +43,5 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
+
+

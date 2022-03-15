@@ -2,6 +2,7 @@ var express = require('express');
 const app = require('../server');
 var router = express.Router();
 var eventCntrl = require('../controllers/events')
+const isLoggedin = require('../helper/isLogedin')
 // var methodOverride = require('method-override')
 
 // router.use(methodOverride('_method'))
@@ -14,7 +15,8 @@ var eventCntrl = require('../controllers/events')
 // }
 
 router.get('/', eventCntrl.allEvents)
-router.get('/addEvent', eventCntrl.addEvent)
+router.get('/addEvent', isLoggedin, eventCntrl.addEvent)
+router.get('/attending/:id', isLoggedin, eventCntrl.attendingEvent)
 
 
 router.post('/addEvent', eventCntrl.CreateEvent)
