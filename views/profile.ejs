@@ -8,7 +8,7 @@
     <h1>Profile page</h1>
     <a href="/">home</a>
     <a href="/profile/edit">edit</a>
-    <form action="/profile/delete?_method=DELETE" method="POST"><button>delete</button></form>
+    <form action="/profile/delete?_method=DELETE" method="POST"><button class="btn btn-dark">delete</button></form>
     <a href="/main/addEvent">add event</a>  
     <a href="/auth/logout">logout</a>
     
@@ -18,8 +18,16 @@
         <div>firstname: <%= currentUser.firstName %></div>
         <div>lastname: <%= currentUser.lastName%> </div>
         <div>email: <%= currentUser.emailAddress%> </div>
+        <div>events you are going to: 
+          <% currentUser.events.forEach(function(eachEvent){ %>
+            <div>Name: <%= eachEvent.name %> <a href="/main/deatails/<%=eachEvent.id%>">deatails</a></div>
+          <% }) %></div>
     <% } %>
-
+    <div>events you created:
+    <% eventsCreated.forEach(function(eachEvent){ %>
+      <div>Name: <%= eachEvent.name %> <a href="/main/edit/<%=eachEvent.id%>">edit</a> <form action="/main/delete/<%=eachEvent.id%>"><button type="submit">delete</button></div>
+    <% }) %></div>
+      
     
 
     </body>

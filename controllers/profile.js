@@ -1,6 +1,7 @@
 //const Profile = require('../models/profile')
+const { populate } = require('../models/User')
 const User = require('../models/User')
-
+const Event = require('../models/event')
 // async function CreateProfilepage(req, res){
     
 
@@ -17,13 +18,13 @@ const User = require('../models/User')
 
 // }
 
-function showProfile(req, res){
-    console.log(req.query.id);
-    console.log(req.user)
+async function showProfile(req, res){
     
-          res.render("profile")
-    
+   let currentUser = await User.findById(req.user.id).populate('events')
+   let eventsCreated = await Event.find({creator: req.user.id})
+
    
+    res.render("profile", {currentUser, eventsCreated})
 
 }
 

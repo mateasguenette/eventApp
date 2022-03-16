@@ -1,0 +1,10 @@
+<h1>deatails page</h1>
+
+
+
+<% if(event.attendies.length !== 0){ %>
+    <% event.attendies.forEach(function(eachAttendie){ %>
+        <div>name: <%= eachAttendie.firstName %></div>
+    <% })} %> 
+
+   <div>creator: <%= event.creator.firstName %></div> 

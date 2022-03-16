@@ -1,15 +1,15 @@
 const { redirect } = require('express/lib/response')
-const Event = require('../models/posts')
+const Event = require('../models/event')
+const { events, findById } = require('../models/User')
 const User = require('../models/User')
 
 async function allEvents(req, res){
     console.log('in the all event function')
     // Events.create(req.body)
-    let allEvent = await Event.find({}).populate('creator')
+    let allEvent = await Event.find({})
     console.log(allEvent)
-    console.log(req.user._id)
-    let user = await User.findById(req.user._id)
-    console.log(user)
+    
+   
     res.render('index', {allEvent: allEvent})
 }
 
@@ -40,4 +40,37 @@ async function attendingEvent(req, res){
     res.redirect('/')
 }
 
-module.exports = {allEvents, addEvent, CreateEvent, attendingEvent}
+ async function viewDeatails(req, res){
+    //  console.log(req.params.id)
+
+    //  let event = await Event.findById(req.params.id).populate('attendies creator')
+     
+    Event.findById(req.params.id).populate('attendies creator').exec(function(err, event){
+        // let eventId = await Event.findById(req.params.id)
+        console.log(event)
+        res.render('deatails', {event})
+    })
+    
+ // res.render('deatails', {event})
+    
+}
+
+async function edit(req, res){
+let event = await Event.findById(req.params.id)
+
+res.render('editEvent', {event})
+}
+
+async function edit_post(req, res){
+await Event.findByIdAndUpdate(req.params.id, req.body)
+res.redirect('/profile/showProfile')
+}
+
+async function deleteEvent(req, res){
+    await Event.findByIdAndDelete(req.params.id)
+    await User.updateOne({_id: req.user.id}, {$pull: {events: req.params.id}})
+   
+    
+    res.redirect('/profile/showProfile')
+}
+module.exports = {allEvents, addEvent, CreateEvent, attendingEvent, viewDeatails, edit, edit_post, deleteEvent}

@@ -17,7 +17,10 @@ const isLoggedin = require('../helper/isLogedin')
 router.get('/', eventCntrl.allEvents)
 router.get('/addEvent', isLoggedin, eventCntrl.addEvent)
 router.get('/attending/:id', isLoggedin, eventCntrl.attendingEvent)
-
+router.get('/deatails/:id', eventCntrl.viewDeatails)
+router.get('/edit/:id', eventCntrl.edit)
+router.post('/edit/:id', eventCntrl.edit_post)
+router.get('/delete/:id', isLoggedin, eventCntrl.deleteEvent)
 
 router.post('/addEvent', eventCntrl.CreateEvent)
 

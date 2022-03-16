@@ -1,0 +1,22 @@
+<h1>edit page</h1>
+
+<a href="/">home</a>
+
+
+<form action="/main/edit/<%=event.id %>" method="POST">
+    <label>name:</label><br>
+    <input name="name" type="text" value="<%=event.name%>"><br>
+    <label>description:</label><br>
+    <input name="description" type="text" value="<%=event.description%>"><br>
+    <label>photo:</label><br>
+    <input name="photo" type="text" value="<%=event.photo%>"><br>
+    <label>location:</label><br>
+    <input name="location" type="text" value="<%=event.location%>"><br>
+    <label>price:</label><br>
+    <input name="price" type="number" value="<%=event.price%>"><br>
+    <label>date:</label><br>
+    <input name="date" type="date" value="<%=event.date%>"><br>
+    
+    <input type="submit" value="update">
+
+</form>
