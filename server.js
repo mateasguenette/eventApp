@@ -83,7 +83,7 @@ app.use(function(err, req, res, next) {
 
 
 mongoose.connect(
-  "mongodb://127.0.0.1:27017/mongoose-eventApp",
+  "mongodb+srv://mateas123:mmateas123@eventapp.w7bhb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

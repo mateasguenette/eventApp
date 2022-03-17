@@ -16,4 +16,5 @@ router.get('/showProfile',isLoggedin, profileCntrl.showProfile)
 router.delete('/delete', isLoggedin, profileCntrl.deleteUser)
 router.get('/edit', isLoggedin, profileCntrl.editProfile)
 router.post('/editProfile', profileCntrl.editProfile_post)
+
 module.exports = router;

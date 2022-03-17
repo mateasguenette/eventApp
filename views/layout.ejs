@@ -9,12 +9,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1>event app</h1>
-    <a class="btn btn-outline-primary" href="/main/addEvent">add event</a>
-    <a href="/auth/signup">sign up</a>
-    <a href="/auth/signin">login</a>
-    <a href="/profile/showProfile">profile</a>
-    <a href="/">home</a>
+    <style>
+        body {
+          padding: 100px; 
+        }
+        #title{
+            padding: 10px;
+            text-align: center;
+            background: #427fcf;
+            color: white;
+            font-size: 20px;
+        }
+      </style>
+    <a id="title" href="/">event app</a><br>
+
+    
+    <a class="btn btn-outline-primary mr-1" href="/auth/signup">sign up</a>
+    <a class="btn btn-outline-primary mr-1" href="/auth/signin">login</a>
+    <a class="btn btn-outline-primary mr-1" href="/profile/showProfile">profile</a>
+    <a class="btn btn-outline-primary mr-1" href="/">home</a>
+    <a class="btn btn-outline-primary mr-1" href="/auth/logout">log out</a>
     <br>
     <hr>
     
