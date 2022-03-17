@@ -14,12 +14,13 @@
       }
 }
     </style>
+
+    <div class="card-deck">
     <% allEvent.forEach(function(eachEvent){ %>
-    <div class="card-columns">
-    <div class="card">
+    
     
     <div id="eventCard" class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="<%= eachEvent.photo %>" alt="image of event">
       <div class="card-body">
         
           <h5 class="card-title"><%= eachEvent.name %></h5>
@@ -34,8 +35,6 @@
         
       </div>
     </div>
-  </div>
-</div>
-
-</div>
+  
 <% }) %>
+</div>
