@@ -3,13 +3,13 @@
 ## Rules and General Overview
 
 
-event app description
+By using an event app, you can create events, organizers can keep track of the whereabouts of attendees, edit and delete your events. As a user you can decide wich events you want to attend, create a profile, edit it and delete it.
 
 
 ## Screenshots
 
-![Starting game board](starting.png)
-![Final game board](ending.png)
+![Starting game board](ScreenShot1.png)
+![Final game board](ScreenShot3.png)
 
 ## Technologies Used
 
